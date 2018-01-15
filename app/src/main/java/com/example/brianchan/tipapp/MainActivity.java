@@ -64,4 +64,10 @@ public class MainActivity extends AppCompatActivity {
         out.setText("Cost of Meal: $" + costFormatted + "\nTip Amount: "+ tipFormatted+"%\nTotal Tip: $" + tipAmtFormatted + "\nFinal Price: $"+ finalFormatted);
 
     }
+
+    public void roundDown(View view) {
+    }
+
+    public void roundUp(View view) {
+    }
 }
