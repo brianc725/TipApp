@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private double tipAmt = 0;
     private double fin = 0;
     private String finalFormatted = "0.00";
+    private boolean calculated = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
         fin = cost + tipAmt;
         finalFormatted = String.format("%.2f", fin);
+
+        calculated = true;
         updateOutput();
     }
-
-    //todo: round up or down option, change textview to red and update tip amount %, total tip, and final price to show adjustment made
 
     private void updateOutput(){
         TextView out = (TextView)findViewById(R.id.output);
@@ -66,8 +67,36 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void roundDown(View view) {
+        if (calculated == true)
+        {
+            double roundedDown = Math.floor(fin);
+            double newTip = roundedDown - cost;
+            tipAmtFormatted = String.format("%.2f", newTip);
+            finalFormatted = String.format("%.2f", roundedDown);
+            double rawTip = ((roundedDown - cost)/cost)*100;
+            tipFormatted = String.format("%.1f", rawTip);
+            updateOutput();
+        }
+        else {
+            Toast.makeText(this, "You have not made a calculation yet.", Toast.LENGTH_SHORT).show();
+            return;
+        }
     }
 
     public void roundUp(View view) {
+        if (calculated == true)
+        {
+            double roundedUp = Math.ceil(fin);
+            double newTip = roundedUp - cost;
+            tipAmtFormatted = String.format("%.2f", newTip);
+            finalFormatted = String.format("%.2f", roundedUp);
+            double rawTip = ((roundedUp - cost)/cost)*100;
+            tipFormatted = String.format("%.1f", rawTip);
+            updateOutput();
+        }
+        else {
+            Toast.makeText(this, "You have not made a calculation yet.", Toast.LENGTH_SHORT).show();
+            return;
+        }
     }
 }

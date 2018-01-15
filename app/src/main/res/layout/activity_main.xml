@@ -97,7 +97,6 @@
         android:textSize="24dp"
         android:text="Cost of Meal: $0.00\nTip Amount: 0.0%\nTotal Tip: $0.00\nFinal Price: $0.00" />
 
-    <!--todo: round final price up or down, update tip-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
