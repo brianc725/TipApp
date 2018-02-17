@@ -12,115 +12,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Tip Calculator App"
+        android:text="Tip Calculator"
         android:textColor="@android:color/black"
         android:textSize="24dp" />
 
-    <TextView
+    <Button
+        android:id="@+id/beforetax"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Enter Cost of Meal:"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="$"
-            />
-
-        <EditText
-            android:id="@+id/costEdit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="9"
-            android:gravity="center"
-            android:hint="Cost of Meal"
-            android:inputType="numberDecimal" />
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Enter Tip Amount:"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        >
-
-        <EditText
-            android:id="@+id/tipEdit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="7"
-            android:gravity="center"
-            android:hint="Tip Percentage"
-            android:inputType="numberDecimal" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:gravity="center"
-            android:text="%"
-            />
-
-    </LinearLayout>
+        android:onClick="beforeTax"
+        android:text="Calculate tip before tax" />
 
     <Button
-        android:id="@+id/calculateButton"
+        android:id="@+id/aftertax"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:onClick="calculate"
-        android:text="Calculate total" />
-
-    <TextView
-        android:id="@+id/output"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="24dp"
-        android:text="Cost of Meal: $0.00\nTip Amount: 0.0%\nTotal Tip: $0.00\nFinal Price: $0.00" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center">
-
-        <Button
-        android:id="@+id/down"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:onClick="roundDown"
-        android:layout_weight="1"
-        android:text="Round Down" />
-
-        <Button
-            android:id="@+id/up"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:onClick="roundUp"
-            android:layout_weight="1"
-            android:text="Round Up" />
-
-    </LinearLayout>
+        android:onClick="afterTax"
+        android:text="Calculate tip after tax" />
 
 </LinearLayout>
